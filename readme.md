@@ -94,6 +94,7 @@ CUDA_VISIBLE_DEVICES=0 python tasks/trainer.py --config configs/diffsr_df2k4x.ya
 | diffsr_div2k | 27.160 | 0.786 | 0.129 | 53.675 | 0.129 |
 
 # Citation
+```bib
 @article{LI202247,
 title = {SRDiff: Single image super-resolution with diffusion probabilistic models},
 journal = {Neurocomputing},
@@ -107,3 +108,4 @@ author = {Haoying Li and Yifan Yang and Meng Chang and Shiqi Chen and Huajun Fen
 keywords = {Single image super-resolution, Diffusion probabilistic model, Diverse results, Deep learning},
 abstract = {Single image super-resolution (SISR) aims to reconstruct high-resolution (HR) images from given low-resolution (LR) images. It is an ill-posed problem because one LR image corresponds to multiple HR images. Recently, learning-based SISR methods have greatly outperformed traditional methods. However, PSNR-oriented, GAN-driven and flow-based methods suffer from over-smoothing, mode collapse and large model footprint issues, respectively. To solve these problems, we propose a novel SISR diffusion probabilistic model (SRDiff), which is the first diffusion-based model for SISR. SRDiff is optimized with a variant of the variational bound on the data likelihood. Through a Markov chain, it can provide diverse and realistic super-resolution (SR) predictions by gradually transforming Gaussian noise into a super-resolution image conditioned on an LR input. In addition, we introduce residual prediction to the whole framework to speed up model convergence. Our extensive experiments on facial and general benchmarks (CelebA and DIV2K datasets) show that (1) SRDiff can generate diverse SR results with rich details and achieve competitive performance against other state-of-the-art methods, when given only one LR input; (2) SRDiff is easy to train with a small footprint(The word “footprint” in this paper represents “model size” (number of model parameters).); (3) SRDiff can perform flexible image manipulation operations, including latent space interpolation and content fusion.}
 }
+```
