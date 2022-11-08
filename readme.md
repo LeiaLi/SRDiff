@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ## Dataset Preparation
 
-1. To download DIV2K, Flickr2K and CelebA, and post-processing the data, please refer to https://github.com/andreas128/SRFlow
+1. To download DIV2K, Flickr2K and CelebA, please refer to https://github.com/andreas128/SRFlow
 
 2. Please put the downloaded DIV2K, Flickr2K and CelebA dataset in  
     data/raw/DIV2K, 
