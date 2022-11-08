@@ -1,0 +1,6 @@
+base_config:
+  - ./diffsr_base.yaml
+  - ./celeb_a.yaml
+trainer_cls: tasks.srdiff_celeb.SRDiffCeleb
+batch_size: 32
+max_updates: 300000

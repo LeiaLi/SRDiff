@@ -1,0 +1,39 @@
+base_config:
+  - ./config_base.yaml
+  - ./sr_base.yaml
+# model
+beta_schedule: cosine
+beta_s: 0.008
+beta_end: 0.02
+hidden_size: 64
+timesteps: 100
+res: true
+res_rescale: 2.0
+up_input: false
+use_wn: false
+gn_groups: 0
+use_rrdb: true
+rrdb_num_block: 8
+rrdb_num_feat: 32
+rrdb_ckpt: ''
+unet_dim_mults: 1|2|2|4
+clip_input: true
+denoise_fn: unet
+use_attn: false
+aux_l1_loss: true
+aux_ssim_loss: false
+aux_percep_loss: false
+loss_type: l1
+pred_noise: true
+clip_grad_norm: 10
+weight_init: false
+fix_rrdb: true
+
+# train and eval
+lr: 0.0002
+decay_steps: 100000
+accumulate_grad_batches: 1
+style_interp: false
+save_intermediate: false
+show_training_process: false
+print_arch: false

@@ -1,0 +1,11 @@
+binary_data_dir: data/binary/df2k4x
+patch_size: 160
+crop_size: 320
+thresh_size: 160
+test_crop_size: [ 2040, 2040 ]
+test_thresh_size: 0
+valid_steps: 4
+num_sanity_val_steps: 4
+eval_batch_size: 1
+test_batch_size: 1
+sr_scale: 4

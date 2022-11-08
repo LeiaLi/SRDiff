@@ -1,0 +1,11 @@
+base_config: ./config_base.yaml
+data_interp: bicubic # bilinear | bicubic
+data_augmentation: false
+max_updates: 300000
+batch_size: 16
+eval_batch_size: 1
+test_batch_size: 1
+valid_steps: 3
+num_sanity_val_steps: 3
+test_save_png: false
+gen_dir_name: ''
