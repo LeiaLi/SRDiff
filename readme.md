@@ -1,7 +1,10 @@
 This repository contains the implementation of the following paper:
     SRDiff: Single image super-resolution with diffusion probabilistic models
+    
     Haoying Li, Yifan Yang, Meng Chang, Shiqi Chen, Huajun Feng, Zhihai Xu, Qi Li, Yueting Chen
+    
     Neurocomputing, Volume 479, pp 47-59
+    
     https://doi.org/10.1016/j.neucom.2022.01.029
 
 # Get Started
