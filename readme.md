@@ -34,10 +34,10 @@ python data_gen/df2k.py --config configs/df2k4x.yaml
 
 ## Pretrained Model
 Please go to https://github.com/LeiaLi/SRDiff/releases/tag/v1.0.0 to download the pretrained models.
-- celeb
-    -srdiff_pretrained_celebA/model_ckpt_steps_300000.ckpt
-- df2k
-    -srdiff_pretrained_div2k/model_ckpt_steps_400000.ckpt
+- CelebA
+    - srdiff_pretrained_celebA/model_ckpt_steps_300000.ckpt
+- DIV2K
+    - srdiff_pretrained_div2k/model_ckpt_steps_400000.ckpt
 
 ## Train & Evaluate
 1. Prepare datasets. Please refer to Dataset Preparation.
