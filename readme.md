@@ -88,8 +88,8 @@ CUDA_VISIBLE_DEVICES=0 python tasks/trainer.py --config configs/diffsr_df2k4x.ya
 ```
 
 # Results
-| Task | PSNR | SSIM| LPIPS| LR_PSNR | Total_loss |
-| ---  | ---  | --- | ---  | ---     |      ---   |
+| Task | PSNR | SSIM | LPIPS | LR_PSNR | Total_loss |
+| :---:| :---:| :---:| :---: | :---:   |     :---:  |
 | diffsr_celeb | 25.454 | 0.746 | 0.106 | 53.094 | 0.106 |
 | diffsr_div2k | 27.160 | 0.786 | 0.129 | 53.675 | 0.129 |
 
