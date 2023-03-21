@@ -64,25 +64,26 @@ class Trainer:
 
         train_pbar = tqdm(dataloader, initial=training_step, total=float('inf'),
                           dynamic_ncols=True, unit='step')
-        for batch in train_pbar:
-            if training_step % hparams['val_check_interval'] == 0:
-                with torch.no_grad():
-                    model.eval()
-                    self.validate(training_step)
-                save_checkpoint(model, optimizer, self.work_dir, training_step, hparams['num_ckpt_keep'])
-            model.train()
-            batch = move_to_cuda(batch)
-            losses, total_loss = self.training_step(batch)
-            optimizer.zero_grad()
+        while self.global_step < hparams['max_updates']:
+            for batch in train_pbar:
+                if training_step % hparams['val_check_interval'] == 0:
+                    with torch.no_grad():
+                        model.eval()
+                        self.validate(training_step)
+                    save_checkpoint(model, optimizer, self.work_dir, training_step, hparams['num_ckpt_keep'])
+                model.train()
+                batch = move_to_cuda(batch)
+                losses, total_loss = self.training_step(batch)
+                optimizer.zero_grad()
 
-            total_loss.backward()
-            optimizer.step()
-            training_step += 1
-            scheduler.step(training_step)
-            self.global_step = training_step
-            if training_step % 100 == 0:
-                self.log_metrics({f'tr/{k}': v for k, v in losses.items()}, training_step)
-            train_pbar.set_postfix(**tensors_to_scalars(losses))
+                total_loss.backward()
+                optimizer.step()
+                training_step += 1
+                scheduler.step(training_step)
+                self.global_step = training_step
+                if training_step % 100 == 0:
+                    self.log_metrics({f'tr/{k}': v for k, v in losses.items()}, training_step)
+                train_pbar.set_postfix(**tensors_to_scalars(losses))
 
     def validate(self, training_step):
         val_dataloader = self.build_val_dataloader()
